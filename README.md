@@ -21,7 +21,7 @@ The `--name` is totally optional but might help you to locate the container late
 Choose whatever name you like.
 
 ```
-HOST$ docker create -v $(pwd):/arangodb --name debian-jessie-builder-devel arangodb/debian-jessie-builder bash
+HOST$ docker create -it -v $(pwd):/arangodb --name debian-jessie-builder-devel arangodb/debian-jessie-builder bash
 ```
 
 ## Create the required debs
