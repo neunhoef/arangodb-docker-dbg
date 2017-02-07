@@ -53,7 +53,7 @@ HOST$ docker build -t $USER/arangodb-dbg:$VERSION .
 ## Run the container
 
 ```
-HOST$ docker run -e ARANGO_NO_AUTH=1 --name myarangodb $USER/arangodb-dbg:$VERSION
+HOST$ docker run --privileged -e ARANGO_NO_AUTH=1 --name myarangodb $USER/arangodb-dbg:$VERSION
 ```
 
 ## Attach with the debugger
