@@ -5,10 +5,12 @@ RUN echo "add-auto-load-safe-path /" > /root/.gdbinit && \
 
 COPY arangodb-dbg.deb /arangodb-dbg.deb
 RUN dpkg -i /arangodb-dbg.deb
-RUN apt-get update && apt-get install -y gdb wget unzip elfutils
+RUN apt-get update && apt-get install -y gdb wget unzip
 RUN mkdir /src && \
     cd /src && \
     VERSION=$(arangod --version | grep '^build-repository' | sed 's/.*-g\([0-9a-f]\+\).*/\1/g') && \
     wget -c https://github.com/arangodb/arangodb/archive/${VERSION}.zip && \
     unzip -q ${VERSION}.zip && \
-    mv arangodb-* arangodb
+    mv arangodb-* arangodb && \
+    rm ${VERSION}.zip && \
+    rm /arangodb-dbg.deb
