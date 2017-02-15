@@ -39,7 +39,7 @@ Files, versions etc. are dynamic so please adjust
 
 ```
 HOST$ git clone https://github.com/arangodb/arangodb-docker # first time only
-HOST$ git clone https://github.com/arangodb-helper/arangodb-docker-debug # first time only
+HOST$ git clone https://github.com/arangodb-helper/arangodb-docker-dbg # first time only
 HOST$ cd arangodb-docker
 HOST$ cp $ARANGO_SOURCE_TREE/build-deb/$RELEASE_DEB.deb arangodb.deb
 HOST$ docker build -t $USER/arangodb:$VERSION -f Dockerfile3.local .
